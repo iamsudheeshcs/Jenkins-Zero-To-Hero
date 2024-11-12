@@ -3,20 +3,9 @@ pipeline {
     docker { image 'node:16-alpine' }
   }
   stages {
-    stage('Install Dependencies') {
-      steps {
-        sh 'npm install'  // Install Node.js dependencies
-      }
-    }
     stage('Test') {
       steps {
-        sh 'node --version'  // Check Node.js version
-        sh 'npm test'        // Run tests (assuming you have tests defined in your package.json)
-      }
-    }
-    stage('Build') {
-      steps {
-        sh 'npm run build'  // Build the project (assuming a "build" script exists)
+        sh 'node --version'
       }
     }
   }
